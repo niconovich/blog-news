@@ -14,7 +14,7 @@ export const Header = ({menu}: any) => {
     const {theme} = useContext(ThemeContext);
     useEffect (() => {
         dispatch(loadArticle());
-    })
+    },[])
     const articles = useSelector((state: IStore) => state.articles.articles);
    console.log('article',articles);
     const user = useSelector((state: IStore) => state.users.user );

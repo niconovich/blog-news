@@ -25,13 +25,13 @@ function App() {
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
             <BrowserRouter>
               <Header/>
-                {/*<Routes>*/}
-                {/*    <Route path='/'>*/}
-                {/*        <Route index element={<AllCards/>} />*/}
+                <Routes>
+                    <Route path='/'>
+                        <Route index element={<AllCards/>} />
 
-                {/*        /!*<Route path='*' element={<Activation />} />*!/*/}
-                {/*    </Route>*/}
-                {/*  </Routes>*/}
+                        {/*<Route path='*' element={<Activation />} />*/}
+                    </Route>
+                  </Routes>
 
                 <Footer className={theme}/>
             </BrowserRouter>

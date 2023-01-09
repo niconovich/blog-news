@@ -1,12 +1,13 @@
 
 interface ImageSrc {
+   variant?:'bg'|'md'|'sm'
   image: string | undefined
   alt: string | undefined
 }
-export const Image = ({ image, alt }: ImageSrc) => {
+export const Image = ({ variant, image, alt }: ImageSrc) => {
     return (
         <>
-            <img src={image} alt={alt} />
+            <img className={variant} src={image} alt={alt} />
         </>
     )
 }

@@ -31,11 +31,14 @@ export const Blog = () => {
 
             <div className={`blog__body blog__body--${theme}`}>
                 <div className='blog__main-content'>
-                    {data.map( (card, i) => card === data[0] ? <Card key={card.id} variant='bg' id={card.id} publishedAt={card.publishedAt} title={card.title} summary={card.summary} imageUrl={card.imageUrl}/> : <Card key={card.id} variant='md' id={card.id} publishedAt={card.publishedAt} title={card.title} summary={card.summary} imageUrl={card.imageUrl}/>)}
+                    {data.map( (card, i) => <Card key={card.id} id={card.id} variant='bg' publishedAt={card.publishedAt} title={card.title} summary={card.summary} imageUrl={card.imageUrl} newsSite={card.newsSite}/>)}
                 </div>
-                <div className='blog__feat-content'>
-                    {data.map( (card, i) => <Card key={card.id} id={card.id} variant='sm' publishedAt={card.publishedAt} title={card.title} summary={card.summary} imageUrl={card.imageUrl}/>)}
-                </div>
+                {/*<div className='blog__main-content'>*/}
+                {/*    {data.map( (card, i) => card === data[0] ? <Card key={card.id} variant='bg' id={card.id} publishedAt={card.publishedAt} title={card.title} summary={card.summary} imageUrl={card.imageUrl}/> : <Card key={card.id} variant='md' id={card.id} publishedAt={card.publishedAt} title={card.title} summary={card.summary} imageUrl={card.imageUrl}/>)}*/}
+                {/*</div>*/}
+                {/*<div className='blog__feat-content'>*/}
+                {/*    {data.map( (card, i) => <Card key={card.id} id={card.id} variant='md' publishedAt={card.publishedAt} title={card.title} summary={card.summary} imageUrl={card.imageUrl} newsSite={card.newsSite}/>)}*/}
+                {/*</div>*/}
             </div>
             <Pagination dataCount={dataCount}/>
         </>

@@ -24,7 +24,7 @@ export const AllCards = () => {
     // const ResultComponent = getResultComponent(activeTab)
     return (
         <>
-            <PageWrapper title={'Blog'}
+            <PageWrapper title={'News'}
                 breadcrumb={<Breadcrumb>
                     <Breadcrumb.Item active>Home</Breadcrumb.Item>
                 </Breadcrumb>}>

@@ -23,7 +23,6 @@ function* fetchLoadPosts() {
     const responseCount: Response = yield fetch(`  https://api.spaceflightnewsapi.net/v3/articles/count`);
     const count:number = yield responseCount.json();
     console.log('response',data,count);
-
     yield put(setArticleTotal(count));
     yield put(setArticle(data));
  }
@@ -37,9 +36,9 @@ const setSearchValue = (value: string) => ({
     value,
 })
 
-const setArticle = ( article: IArticle[] ) => ({
+const setArticle = ( articles: IArticle[] ) => ({
     type: SET_ARTICLE,
-    article,
+    articles,
 });
 
 const setArticleTotal = (count: number ) => ({
