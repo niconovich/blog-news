@@ -1,0 +1,47 @@
+.page-wrapper {
+  text-align: left;
+
+  .page-wrapper__title {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 80px;
+
+    &:hover {
+      user-select: none;
+    }
+  }
+
+  &--light {
+    .page-wrapper__title {
+      color: #313037;
+    }
+  }
+
+  &--dark {
+
+    h3,
+    div,
+    p,
+    span,
+    input,
+    svg {
+      fill: #fff;
+      color: #fff;
+      background-color: rgb(50, 50, 50);
+    }
+
+    .wrapper {
+      form>fieldset>label {
+        color: #fff;
+      }
+    }
+
+    button {
+      color: #bebebe;
+    }
+
+    input {
+      background-color: #525252;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+export const SET_ARTICLE = 'SET_ARTICLE';
+export const ADD_FAVORITE = 'ADD_FAVORITE';
+export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
+export const SET_COUNT_TOTAL = 'SET_COUNT_TOTAL';
+export const LOAD_ARTICLE = 'LOAD_ARTICLE';
+export const SET_SEARCH_VALUE = 'SET_SEARCH_VALUE';
+

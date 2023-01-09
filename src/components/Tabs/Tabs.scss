@@ -1,0 +1,44 @@
+.tabs {
+  .tabs__body {
+    max-width: 100%;
+    display: flex;
+    flex-flow: row;
+    border-bottom: 1px solid #DADADA;
+  }
+
+  .tabs__btn {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 2rem 2rem 2rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid;
+    border-color: transparent;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #313037;
+    transition: 0.3s;
+
+    &:hover {
+      border-color: #313037;
+      cursor: pointer;
+    }
+  }
+
+  .btn__active {
+    border-bottom: '1px solid green';
+  }
+
+  &--dark {
+      .tabs__btn {
+      color:#fff;
+      &:hover {
+        color: #9aa6ff;
+        border-color: #9aa6ff;
+      }
+    }
+  }
+}

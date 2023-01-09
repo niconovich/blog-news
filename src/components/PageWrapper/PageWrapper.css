@@ -1,0 +1,35 @@
+.page-wrapper {
+  text-align: left;
+}
+.page-wrapper .page-wrapper__title {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 80px;
+}
+.page-wrapper .page-wrapper__title:hover {
+  user-select: none;
+}
+.page-wrapper--light .page-wrapper__title {
+  color: #313037;
+}
+.page-wrapper--dark h3,
+.page-wrapper--dark div,
+.page-wrapper--dark p,
+.page-wrapper--dark span,
+.page-wrapper--dark input,
+.page-wrapper--dark svg {
+  fill: #fff;
+  color: #fff;
+  background-color: rgb(50, 50, 50);
+}
+.page-wrapper--dark .wrapper form > fieldset > label {
+  color: #fff;
+}
+.page-wrapper--dark button {
+  color: #bebebe;
+}
+.page-wrapper--dark input {
+  background-color: #525252;
+}
+
+/*# sourceMappingURL=PageWrapper.css.map */

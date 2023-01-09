@@ -1,0 +1,23 @@
+.input-text {
+  border: none;
+}
+.input-text label {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  font-size: 0.8rem;
+  color: rgb(110, 110, 110);
+}
+.input-text label input {
+  width: 100%;
+  padding: 0.3rem 0.7rem;
+  margin-top: 0.3rem;
+  line-height: 1rem;
+  font-size: 0.9rem;
+  outline: none;
+  border: 1px solid rgb(129, 129, 129);
+  border-radius: 0.2rem;
+}
+.input-text label input::placeholder {
+  color: rgb(211, 211, 211);
+}
