@@ -29,7 +29,7 @@ function App() {
                     <Route path='/'>
                         <Route index element={<AllCards/>} />
 
-                        {/*<Route path='*' element={<Activation />} />*/}
+                        <Route path='*' element={<Activation />} />
                     </Route>
                   </Routes>
 

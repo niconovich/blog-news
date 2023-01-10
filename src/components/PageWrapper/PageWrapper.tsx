@@ -13,15 +13,14 @@ type PageWrapperProps = PropsWithChildren<{
 
 export const PageWrapper = ({ breadcrumb, button, children, title}: PageWrapperProps) => {
     const {theme} = useContext(ThemeContext)
-
     return (
         <div className={`page-wrapper page-wrapper--${theme}`}>
             <div className='wrapper'>
-                {breadcrumb}
-                <NavLink style={{textDecoration: 'none'}} to={'/'}>
+                <h1 className='page-wrapper__title'>{title}</h1>
+                <NavLink  to={'/'}>
                     {button}
                 </NavLink>
-                <h1 className='page-wrapper__title'>{title}</h1>
+                {breadcrumb}
                 {children}
             </div>
         </div>

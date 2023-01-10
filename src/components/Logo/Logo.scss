@@ -1,0 +1,25 @@
+.logo{
+    display:flex;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    text-indent:10px;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: left;
+    img{
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.logo--dark {
+    span{
+    color: rgb(168, 167, 167);}
+}
+
+.logo--light{
+    span{
+    color: #6d6d6d;}
+}
+

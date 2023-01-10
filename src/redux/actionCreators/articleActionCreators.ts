@@ -15,10 +15,12 @@ import {
 import { SET_ARTICLE } from '../actionTypes/articleActionTypes';
 import { getToken } from './userActionCreators';
 
-function* fetchLoadPosts() {
-    // const { payload } = action;
-    // const { rowsPerPage, currentPage, searchValue } = payload;
-    const response: Response = yield fetch(`https://api.spaceflightnewsapi.net/v3/articles?_lim=12`);
+function* fetchLoadPosts(action: any) {
+    const { payload } = action;
+    const {currentPage, searchValue } = payload;
+    const start=currentPage==1?1:currentPage*12
+    console.log('payload',start,searchValue);
+    const response: Response = yield fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=12&_start=${start}&title_contains=${searchValue}`);
     const data: IArticle[] = yield response.json();
     const responseCount: Response = yield fetch(`  https://api.spaceflightnewsapi.net/v3/articles/count`);
     const count:number = yield responseCount.json();
@@ -27,8 +29,9 @@ function* fetchLoadPosts() {
     yield put(setArticle(data));
  }
 
-const loadArticle = () => ({
+const loadArticle = (payload:{currentPage:number, searchValue:string }) => ({
     type: LOAD_ARTICLE,
+    payload,
 })
 
 const setSearchValue = (value: string) => ({
