@@ -18,7 +18,7 @@ import { getToken } from './userActionCreators';
 function* fetchLoadPosts() {
     // const { payload } = action;
     // const { rowsPerPage, currentPage, searchValue } = payload;
-    const response: Response = yield fetch(`https://api.spaceflightnewsapi.net/v3/articles`);
+    const response: Response = yield fetch(`https://api.spaceflightnewsapi.net/v3/articles?_lim=12`);
     const data: IArticle[] = yield response.json();
     const responseCount: Response = yield fetch(`  https://api.spaceflightnewsapi.net/v3/articles/count`);
     const count:number = yield responseCount.json();
