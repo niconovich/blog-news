@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from '@redux-saga/core';
 import { all } from 'redux-saga/effects'
 
@@ -10,6 +10,10 @@ import { watcherUser } from './actionCreators/userActionCreators';
 import { userReducer } from './reducers/usersReducer';
 
 const sagaMiddleWare = createSagaMiddleware();
+
+const composeEnhancers = composeWithDevTools({
+    // Specify here name, actionsBlacklist, actionsCreators and other options
+});
 
 function* rootSaga(){
     yield all([

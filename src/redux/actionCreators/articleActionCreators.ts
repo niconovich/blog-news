@@ -17,19 +17,19 @@ import { getToken } from './userActionCreators';
 
 function* fetchLoadPosts(action: any) {
     const { payload } = action;
-    const {currentPage, searchValue } = payload;
-    const start=currentPage==1?1:currentPage*12
-    console.log('payload',start,searchValue);
-    const response: Response = yield fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=12&_start=${start}&title_contains=${searchValue}`);
+    const {rowsPerPage,currentPage, searchValue } = payload;
+    const start=currentPage==1?1:currentPage*rowsPerPage
+    console.log('rowsPerPage',rowsPerPage,'start',start,'searchValue',searchValue);
+    const response: Response = yield fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=${rowsPerPage}&_start=${start}&title_contains=${searchValue}`);
     const data: IArticle[] = yield response.json();
-    const responseCount: Response = yield fetch(`  https://api.spaceflightnewsapi.net/v3/articles/count`);
+    const responseCount: Response = yield fetch(`  https://api.spaceflightnewsapi.net/v3/articles/count?title_contains=${searchValue}`);
     const count:number = yield responseCount.json();
     console.log('response',data,count);
     yield put(setArticleTotal(count));
     yield put(setArticle(data));
  }
 
-const loadArticle = (payload:{currentPage:number, searchValue:string }) => ({
+const loadArticle = (payload:{rowsPerPage?:number,currentPage:number, searchValue:string }) => ({
     type: LOAD_ARTICLE,
     payload,
 })

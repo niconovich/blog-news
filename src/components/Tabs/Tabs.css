@@ -1,0 +1,38 @@
+.tabs .tabs__body {
+  max-width: 100%;
+  display: flex;
+  flex-flow: row;
+  border-bottom: 1px solid #DADADA;
+}
+.tabs .tabs__btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 2rem 2rem 2rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid;
+  border-color: transparent;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #313037;
+  transition: 0.3s;
+}
+.tabs .tabs__btn:hover {
+  border-color: #313037;
+  cursor: pointer;
+}
+.tabs .btn__active {
+  border-bottom: "1px solid green";
+}
+.tabs--dark .tabs__btn {
+  color: #fff;
+}
+.tabs--dark .tabs__btn:hover {
+  color: #9aa6ff;
+  border-color: #9aa6ff;
+}
+
+/*# sourceMappingURL=Tabs.css.map */

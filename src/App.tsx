@@ -7,8 +7,8 @@ import {Footer} from "./components/Footer/Footer";
 import { THEMES } from './constants';
 import { ThemeContext } from './contexts/contexts'
 import {Header} from "./components/Header/Header";
-import {AllCards} from "./components/pages/AllCards";
-import {Card} from "./components/Card/Card";
+import {AllNews} from "./components/pages/AllNews";
+import {NewsItem} from "./components/NewsItem/NewsItem";
 import {loadArticle} from "./redux/actionCreators/articleActionCreators";
 
 
@@ -27,7 +27,7 @@ function App() {
               <Header/>
                 <Routes>
                     <Route path='/'>
-                        <Route index element={<AllCards/>} />
+                        <Route index element={<AllNews/>} />
 
                         <Route path='*' element={<Activation />} />
                     </Route>

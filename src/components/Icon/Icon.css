@@ -1,9 +1,10 @@
-.dark {
+.dark path {
   fill: rgb(241, 241, 241);
 }
 
-.light {
-  fill: rgb(50, 50, 50);
+.light path {
+  fill: rgb(109, 109, 109);
+  stroke: rgb(109, 109, 109);
 }
 
 /*# sourceMappingURL=Icon.css.map */

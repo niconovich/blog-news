@@ -1,0 +1,73 @@
+.burger-menu {
+  position: absolute;
+  top: 5rem;
+  width: 14rem;
+  height: 30rem;
+  height: 90vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  background-color: #F3F3F3;
+  border: 1px solid grey;
+}
+.burger-menu .burger-menu__row > div {
+  padding: 0 0;
+}
+.burger-menu .burger-menu__row .burger-menu__user {
+  width: 100%;
+  padding: 2rem 0;
+  background-color: #2231AA;
+  color: #fff;
+}
+.burger-menu .burger-menu__row .burger-menu__user span {
+  margin-right: 1rem;
+  padding: 1rem;
+  background-color: #2737cf;
+}
+.burger-menu .burger-menu__row .burger-menu__link {
+  cursor: pointer;
+  border-bottom: 1px solid grey;
+  padding: 0.5rem 0;
+}
+.burger-menu .burger-menu__row .burger-menu__link:last-child {
+  border-bottom: none;
+}
+.burger-menu .burger-menu__row .burger-menu__theme {
+  display: flex;
+}
+.burger-menu .burger-menu__row .burger-menu__theme > div {
+  width: 50%;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border: 1px solid grey;
+  border-left: none;
+}
+.burger-menu .burger-menu__row .burger-menu__theme > div svg {
+  fill: rgb(39, 39, 39);
+}
+.burger-menu .burger-menu__row .burger-menu__theme > div:hover > svg {
+  fill: rgba(39, 39, 39, 0.685);
+}
+.burger-menu .burger-menu__row .burger-menu__theme > div:last-child {
+  border-right: none;
+}
+
+.burger-menu--dark {
+  background-color: rgb(50, 50, 50);
+}
+.burger-menu--dark div,
+.burger-menu--dark a {
+  color: rgb(185, 185, 185);
+  border-color: grey;
+}
+.burger-menu--dark a:hover {
+  color: #fff;
+}
+.burger-menu--dark .burger-menu__row .burger-menu__theme > div svg {
+  fill: rgba(255, 255, 255, 0.699);
+}
+.burger-menu--dark .burger-menu__row .burger-menu__theme > div:hover > svg {
+  fill: rgb(255, 255, 255);
+}
+
+/*# sourceMappingURL=BurgerMenu.css.map */

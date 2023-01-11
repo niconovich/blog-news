@@ -2,21 +2,21 @@ import { useContext, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {IArticle, IStore} from "../../redux/types";
 import { ThemeContext } from '../../contexts/contexts';
-import './Card.scss';
+import './NewsItem.scss';
 interface ICard extends IArticle {
     variant: 'bg'|'md'|'sm'
 }
 
-export const Card = ({ variant, publishedAt, title, summary, imageUrl, id, newsSite }: ICard) => {
-    const dispatch = useDispatch();
-    const favorites = useSelector((state: IStore) => state.articles.favorites)
-    const [count, setCount] = useState(0)
-    const handleLike = () => setCount(count + 1)
-    const countstr = count === 0 ? ' ' : count
-    const [count2, setCount2] = useState(0)
-    const handleDislike = () => setCount2(count2 + 1)
-    const countstr2 = count2 === 0 ? ' ' : count2
-    const isInclude = favorites.includes(id);
+export const NewsItem = ({ variant, publishedAt, title, summary, imageUrl, id, newsSite }: ICard) => {
+    // const dispatch = useDispatch();
+    // const favorites = useSelector((state: IStore) => state.articles.favorites)
+    // const [count, setCount] = useState(0)
+    // const handleLike = () => setCount(count + 1)
+    // const countstr = count === 0 ? ' ' : count
+    // const [count2, setCount2] = useState(0)
+    // const handleDislike = () => setCount2(count2 + 1)
+    // const countstr2 = count2 === 0 ? ' ' : count2
+    // const isInclude = favorites.includes(id);
     const {theme} = useContext(ThemeContext);
 
     // const handleToggleFavorite = () => {

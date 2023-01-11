@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { ThemeContext } from '../../contexts/contexts'
 import { loadArticle } from '../../redux/actionCreators/articleActionCreators'
 import { IArticle, IStore } from '../../redux/types';
-import { Card } from '../Card/Card';
+import { NewsItem } from '../NewsItem/NewsItem';
 import { Pagination } from '../Pagination/Pagination';
 
 export const Favorites = () => {
@@ -28,7 +28,7 @@ export const Favorites = () => {
         <>
             <div className={`blog__body blog__body--${theme}`}>
                 <div className='blog__main-content'>
-                    {data.map( (card, i) => <Card key={card.id} id={card.id} variant='sm' publishedAt={card.publishedAt} title={card.title} summary={card.summary} imageUrl={card.imageUrl}/>)}
+                    {data.map( (card, i) => <NewsItem key={card.id} id={card.id} variant='sm' publishedAt={card.publishedAt} title={card.title} summary={card.summary} imageUrl={card.imageUrl}/>)}
 
                 </div>
             </div>

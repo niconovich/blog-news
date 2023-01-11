@@ -1,4 +1,4 @@
-import { SET_CURRENT_PAGE, SET_ACTIVE_TAB } from '../actionTypes/settingsActionTypes';
+import {SET_CURRENT_PAGE, SET_ACTIVE_TAB, SET_ROWS_PER_PAGE} from '../actionTypes/settingsActionTypes';
 
 const setActiveTab = (activeTab: string) => ({
     type: SET_ACTIVE_TAB,
@@ -10,4 +10,9 @@ const setCurrentPage = (newPage: number) => ({
     newPage,
 });
 
-export { setActiveTab, setCurrentPage }
+const setRowPage= (rowsPerPage: number) => ({
+    type: SET_ROWS_PER_PAGE,
+    rowsPerPage,
+});
+
+export { setActiveTab, setCurrentPage, setRowPage}

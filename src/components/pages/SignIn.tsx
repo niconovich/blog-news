@@ -1,4 +1,4 @@
-import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import {Breadcrumbs, Link,Typography} from "@mui/material";
 
 import { Button } from '../Button/Button'
 import { FormSignIn } from '../Forms/FormSignIn/FormSignIn'
@@ -12,10 +12,10 @@ export const SignIn = ({ onClickHome }: any) => {
                 button={
                     <Button className='btn' onClick={onClickHome}>{'Back to home'}</Button>
                 }
-                breadcrumb={<Breadcrumb>
-                    <Breadcrumb.Item href='/'>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item active>Sign In</Breadcrumb.Item>
-                </Breadcrumb>}>
+                breadcrumb={<Breadcrumbs>
+                        <Link underline="hover" color="inherit" href='/'>Home</Link>
+                        <Typography color="text.primary">Sign In</Typography>
+                    </Breadcrumbs>  }>
                 <FormSignIn/>
             </PageWrapper>
         </>

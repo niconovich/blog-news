@@ -1,27 +1,46 @@
 .paginations {
   .pagination__body {
-    padding: 2rem 0;
+    padding: 0.8rem 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    height: 1rem;
 
-    .pagination__left {
+    .pagination__title {
       display: flex;
+      flex-wrap: nowrap;
       align-items: center;
-      justify-content: space-between;
+      font-size: 1rem;
+      font-weight: 400;
+
+      .pagination__title--text {
+        padding-right: 5px;
+      }
     }
 
-    .pagination__center {
+    .pagination__allbtn {
       display: flex;
+      flex-wrap: nowrap;
       align-items: center;
-      justify-content: space-around;
-      gap: 1rem;
-    }
+      .pagination__left {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .pagination__center {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right:  10px;
 
-    .pagination__right {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      }
+
+      .pagination__right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
   }
 

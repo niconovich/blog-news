@@ -1,5 +1,6 @@
 .page-wrapper {
   text-align: left;
+  textDecoration: "none";
 }
 .page-wrapper .page-wrapper__title {
   font-weight: 700;

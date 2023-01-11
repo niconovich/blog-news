@@ -1,4 +1,4 @@
-import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import {Breadcrumbs, Link,Typography} from "@mui/material";
 
 import { Button } from '../Button/Button'
 import { FormResetPassword } from '../Forms/FormResetPassword/FormResetPassword'
@@ -12,10 +12,10 @@ export const ResetPass = ({ onClickHome }: any) => {
                 button={
                     <Button className='btn' onClick={onClickHome}>{'Back to home'}</Button>
                 }
-                breadcrumb={<Breadcrumb>
-                    <Breadcrumb.Item href='/'>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item active>Reset Password</Breadcrumb.Item>
-                </Breadcrumb>}>
+                breadcrumb={<Breadcrumbs>
+                    <Link underline="hover" color="inherit" href='/'>Home</Link>
+                    <Typography color="text.primary">Reset Password</Typography>
+                </Breadcrumbs>}>
                 <FormResetPassword/>
             </PageWrapper>
         </>

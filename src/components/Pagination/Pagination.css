@@ -1,0 +1,73 @@
+.paginations .pagination__body {
+  padding: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1rem;
+}
+.paginations .pagination__body .pagination__title {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.paginations .pagination__body .pagination__title .pagination__title--text {
+  padding-right: 5px;
+}
+.paginations .pagination__body .pagination__allbtn {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.paginations .pagination__body .pagination__allbtn .pagination__left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.paginations .pagination__body .pagination__allbtn .pagination__center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.paginations .pagination__body .pagination__allbtn .pagination__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.paginations .pagination__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #313037;
+  cursor: pointer;
+}
+.paginations .pagination__btn:hover {
+  color: #2231AA;
+}
+.paginations .pagination__btn:hover svg {
+  fill: #2231AA;
+}
+.paginations--dark .pagination__btn {
+  color: #fff;
+}
+.paginations--dark .pagination__btn svg {
+  fill: #fff;
+}
+.paginations--dark .pagination__btn:hover {
+  color: #9aa6ff;
+}
+.paginations--dark .pagination__btn:hover svg {
+  fill: #9aa6ff;
+}
+
+/*# sourceMappingURL=Pagination.css.map */

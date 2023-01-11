@@ -11,7 +11,6 @@ const initialState = {
 }
 
 const articleReducer = (state: IArticleStore = initialState , action: any) => {
-    console.log('articleReducer',state)
     switch (action.type) {
         case SET_COUNT_TOTAL: {
             const { count } = action;
