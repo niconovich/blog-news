@@ -17,19 +17,20 @@ import { getToken } from './userActionCreators';
 
 function* fetchLoadPosts(action: any) {
     const { payload } = action;
-    const {rowsPerPage,currentPage, searchValue } = payload;
+    const {rowsPerPage,currentPage, searchValue, sortSpis } = payload;
     const start=currentPage==1?1:currentPage*rowsPerPage
-    console.log('rowsPerPage',rowsPerPage,'start',start,'searchValue',searchValue);
-    const response: Response = yield fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=${rowsPerPage}&_start=${start}&title_contains=${searchValue}`);
+   // console.log('rowsPerPage',rowsPerPage,'start',start,'searchValue',searchValue,'sortSpis',sortSpis);
+    const response: Response = yield fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=${rowsPerPage}&_start=${start}&title_contains=${searchValue}&_sort=${sortSpis}`);
+
     const data: IArticle[] = yield response.json();
     const responseCount: Response = yield fetch(`  https://api.spaceflightnewsapi.net/v3/articles/count?title_contains=${searchValue}`);
     const count:number = yield responseCount.json();
-    console.log('response',data,count);
-    yield put(setArticleTotal(count));
+    // console.log('response',data,count);
+     yield put(setArticleTotal(count));
     yield put(setArticle(data));
  }
 
-const loadArticle = (payload:{rowsPerPage?:number,currentPage:number, searchValue:string }) => ({
+const loadArticle = (payload:{rowsPerPage?:number,currentPage:number, searchValue:string, sortSpis:string }) => ({
     type: LOAD_ARTICLE,
     payload,
 })

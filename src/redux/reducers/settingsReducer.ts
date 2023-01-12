@@ -1,13 +1,14 @@
 import { TABS } from '../../constants';
 
-import {SET_CURRENT_PAGE, SET_ACTIVE_TAB, SET_ROWS_PER_PAGE} from './../actionTypes/settingsActionTypes';
+import {SET_CURRENT_PAGE, SET_ACTIVE_TAB, SET_ROWS_PER_PAGE, SET_SORT_SPIS} from './../actionTypes/settingsActionTypes';
 
 
 
 const initial_state = {
     activeTab: TABS.all,
     currentPage: 1,
-    rowsPerPage: 6,
+    rowsPerPage: 3,
+    sortSpis:'',
 }
 
 const settingsReducer = (state = initial_state, action: any) => {
@@ -32,6 +33,13 @@ const settingsReducer = (state = initial_state, action: any) => {
                     ...state,
                     rowsPerPage: rowsPerPage,
                 })
+        }
+        case SET_SORT_SPIS: {
+            const { sortSpis } = action;
+            return ({
+                ...state,
+                sortSpis: sortSpis,
+            })
         }
         default: return state;
     }

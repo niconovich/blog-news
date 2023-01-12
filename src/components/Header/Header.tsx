@@ -20,11 +20,12 @@ export const Header = ({menu}: any) => {
     const user = useSelector((state: IStore) => state.users.user);
     const searchValue = useSelector((state: IStore) => state.articles.searchValue);
     const rowsPerPage = useSelector((state: IStore) => state.settings.rowsPerPage);
+    const sortSpis = useSelector((state: IStore) => state.settings.sortSpis);
     const currentPage = useSelector((state: IStore) => state.settings.currentPage);
     console.log('Header rowsPerPage=',rowsPerPage)
     useEffect(() => {
-        dispatch(loadArticle({rowsPerPage, currentPage, searchValue}));
-    }, [rowsPerPage,currentPage, searchValue])
+        dispatch(loadArticle({rowsPerPage, currentPage, searchValue, sortSpis}));
+    }, [rowsPerPage,currentPage, searchValue, sortSpis])
 
     const handleChange = (e: any) => {
         // console.log(e.target);

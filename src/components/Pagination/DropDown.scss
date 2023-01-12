@@ -1,6 +1,23 @@
 .DropDown{
   .css-14pxqda-MuiAutocomplete-root .MuiOutlinedInput-root {
     padding: 0;
-    }
+    min-width: 0;
 
+}
+
+}
+
+.DropDown--dark{
+  .css-14pxqda-MuiAutocomplete-root .MuiOutlinedInput-root {
+    padding: 0;
+    min-width: 0;
+  //background-color:rgb(241, 241, 241);
   }
+  & label {
+    color:rgb(241, 241, 241);
+  }
+  & svg {
+    fill: rgb(241, 241, 241);
+  }
+
+}

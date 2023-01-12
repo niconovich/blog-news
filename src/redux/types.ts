@@ -31,6 +31,7 @@ export interface ISettingsStore {
     activeTab: string,
     currentPage: number,
     rowsPerPage: number,
+    sortSpis:string,
 }
 
 export interface IUserStore {
