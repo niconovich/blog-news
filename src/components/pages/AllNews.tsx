@@ -11,7 +11,7 @@ export const AllNews = () => {
         <>
             <PageWrapper title={searchValue==''?'Spaceflight News':`Search: ${searchValue}`}
                 breadcrumb={<Breadcrumbs>
-                    <Link underline="hover" color="inherit" href="#">Home</Link>
+                    <Link underline="hover" color="inherit" href="/">Home</Link>
                 </Breadcrumbs>}>
                 <NewsBlog/>
             </PageWrapper>

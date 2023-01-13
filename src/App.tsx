@@ -1,6 +1,6 @@
 import {useContext, useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {BrowserRouter, Route, Routes } from 'react-router-dom'
 import {Activation} from "./components/Activation/Activation";
 import './App.scss';
 import {Footer} from "./components/Footer/Footer";
@@ -31,6 +31,7 @@ function App() {
                         <Route index element={<AllNews/>} />
                         <Route path='sign_in' element={<SignIn/>} />
                         <Route path='sign_up' element={<SignUp/>} />
+                        <Route path=":id" element={<NewsItem variant={'full'} id={1}/> }/>
                         <Route path='*' element={<Activation />} />
                     </Route>
                   </Routes>
