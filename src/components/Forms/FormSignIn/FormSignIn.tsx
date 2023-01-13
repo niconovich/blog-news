@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { NavLink, useNavigate } from 'react-router-dom'
+import React, {useState} from 'react'
+import {useDispatch} from 'react-redux'
+import {NavLink, useNavigate} from 'react-router-dom'
 
-import { signin } from '../../../redux/actionCreators/userActionCreators'
+import {signin} from '../../../redux/actionCreators/userActionCreators'
 
-import { Button } from '../../Button/Button'
-import { Input } from '../../Input/Input'
+import {Button} from '../../Button/Button'
+import {Input} from '../../Input/Input'
 import './FormSignIn.scss'
 
 export const FormSignIn = () => {
@@ -36,29 +36,29 @@ export const FormSignIn = () => {
 
     return (
         <form className='form-sign-in'
-            onSubmit={onSubmit}>
+              onSubmit={onSubmit}>
             <Input className='form__input'
-                label='E-mail'
-                placeholder='Your e-mail'
-                type='email'
-                error={error}
-                onChange={handleEmail}
-                value={email}/>
+                   label='E-mail'
+                   placeholder='Your e-mail'
+                   type='email'
+                   error={error}
+                   onChange={handleEmail}
+                   value={email}/>
             <Input className='form__input'
-                label='Password'
-                type='password'
-                placeholder='Your password'
-                error={error}
-                onChange={handlePassword}
-                value={password}
+                   label='Password'
+                   type='password'
+                   placeholder='Your password'
+                   error={error}
+                   onChange={handlePassword}
+                   value={password}
             />
-            <NavLink style={{textDecoration: 'none'}} to='/reset_pass'>
-                <p className='form__text'>Forgot password?</p>
-            </NavLink>
+            {/*<NavLink style={{textDecoration: 'none'}} to='/reset_pass'>*/}
+            {/*    <p className='form__text'>Forgot password?</p>*/}
+            {/*</NavLink>*/}
             <div className='form__submit'>
                 <Button className='form__btn'
-                    type='submit'
-                    children='Sign In'/>
+                        type='submit'
+                        children='Sign In'/>
                 <p className='submit__text'>Don`t have an account?
                     <NavLink style={{textDecoration: 'none'}} to='/sign_up'>
                         <span>Sign Up</span>

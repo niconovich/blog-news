@@ -8,12 +8,8 @@ import { settingsReducer } from './reducers/settingsReducer';
 import { watcherArticle } from './actionCreators/articleActionCreators';
 import { watcherUser } from './actionCreators/userActionCreators';
 import { userReducer } from './reducers/usersReducer';
-
 const sagaMiddleWare = createSagaMiddleware();
 
-const composeEnhancers = composeWithDevTools({
-    // Specify here name, actionsBlacklist, actionsCreators and other options
-});
 
 function* rootSaga(){
     yield all([
@@ -28,5 +24,5 @@ const rootReducer = combineReducers({
     users: userReducer,
 })
 
-export default createStore(rootReducer, applyMiddleware(sagaMiddleWare));
+export default createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleWare)));
 sagaMiddleWare.run(rootSaga);
