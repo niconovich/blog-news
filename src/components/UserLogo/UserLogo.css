@@ -1,0 +1,54 @@
+.userLogo .userLogo__body {
+  width: 200px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.userLogo .userLogo__body .userLogo__icon {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  border: 1px solid #3c8be0;
+  background-color: #3c8be0;
+  font-weight: 800;
+  font-size: 1.2rem;
+  border-radius: 100%;
+}
+.userLogo .userLogo__body .userLogo__login {
+  font-weight: 700;
+  color: #1976d2;
+  font-size: 1rem;
+}
+.userLogo .userLogo__btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 2rem 2rem 2rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid;
+  border-color: transparent;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #313037;
+  transition: 0.3s;
+}
+.userLogo .userLogo__btn:hover {
+  border-color: #313037;
+  cursor: pointer;
+}
+.userLogo--dark .userLogo__btn {
+  color: #fff;
+}
+.userLogo--dark .userLogo__btn:hover {
+  color: #9aa6ff;
+  border-color: #9aa6ff;
+}
+
+/*# sourceMappingURL=UserLogo.css.map */

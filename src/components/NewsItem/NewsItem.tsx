@@ -9,81 +9,75 @@ import {addFavorite, removeFavorite} from "../../redux/actionCreators/articleAct
 import {IconUp} from "../Icon/IconUp";
 import {IconDown} from "../Icon/IconDown";
 import {IconMark} from "../Icon/IconMark";
-import {IconMore} from "../Icon/IconMore";
-import {NavLink} from "react-router-dom";
+import {NavLink,useParams} from "react-router-dom";
+
 
 interface ICard extends IArticle {
     variant: 'bg' | 'md' | 'sm' | 'full'
 }
 
 export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, newsSite}: ICard) => {
-    const dispatch = useDispatch();
     const data = useSelector((state: IStore) => state.articles.articles);
-    if (variant === 'full') {
-        console.log(id,data[id].title)
-        publishedAt=data[id].publishedAt
-        title=data[id].title
-        summary=data[id].summary
-        imageUrl=data[id].imageUrl
-        newsSite=data[id].newsSite
-    }
+    const dispatch = useDispatch();
+    const params = useParams();
+    const NewsId:number  =Number(params.id);
+    const news = data.find(news=>news.id == NewsId);
+    console.log('NewsId',news)
 
-    const favorites = useSelector((state: IStore) => state.articles.favorites)
-    const [count, setCount] = useState(0)
-    const handleLike = () => setCount(count + 1)
-    const countstr = count === 0 ? ' ' : count
-    const [count2, setCount2] = useState(0)
-    const handleDislike = () => setCount2(count2 + 1)
-    const countstr2 = count2 === 0 ? ' ' : count2
-    const isInclude = favorites.includes(id);
+    // if (variant === 'full') {
+    //     console.log('full idSelect',data[NewsId].title)
+    //     publishedAt=data[NewsId].publishedAt
+    //     title=data[NewsId].title
+    //     summary=data[NewsId].summary
+    //     imageUrl=data[NewsId].imageUrl
+    //     newsSite=data[NewsId].newsSite
+    // }
+
     const {theme} = useContext(ThemeContext);
 
-    const handleToggleFavorite = () => {
-        dispatch(isInclude ? removeFavorite(id) : addFavorite(id))
+    if(news!==undefined){
+        variant='full'
+        publishedAt=news.publishedAt
+        title=news.title
+        summary = news.summary
+        imageUrl = news.imageUrl
+        newsSite=news.newsSite
     }
 
-    return (
-        <div className={`card--${variant} card--${theme}`}>
-            {variant === 'full' ? <Breadcrumbs>
-            <Link underline="hover" color="inherit" href="/">Home</Link>
-        </Breadcrumbs>:<></>}
-            <NavLink to={`${id}`}>
-            <div className='card__main'>
-                <div className='card__image'>
-                    <img src={imageUrl} alt={title}/>
-                </div>
-                <div className='card__info'>
+        return ( <div className={`card--${variant} card--${theme}`}>
+                    {variant === 'full' ? <Breadcrumbs>
+                     <Link underline="hover" color="inherit" href="/">Home</Link>
+                         </Breadcrumbs> :<></>}
 
-                    <div className='card__date'>
-                        {publishedAt}
-                    </div>
+                  <div className='card__main'  >
+                         <div className='card__image'>
+                            <img src={imageUrl} alt={title}/>
+                         </div>
+                         <div className='card__info'>
 
-                    <div className='card__title'>
-                        <h3>{title}</h3>
-                    </div>
-                    <div className='card__description'>
-                        {summary}
-                    </div>
-                </div>
-            </div>
-            </NavLink>
-            <div className='card__footer'>
-                <div className='card__newsSite'>
-                    <span>Source news: </span>
-                    {newsSite}
-                </div>
-                {variant === 'full' ? <div>
-                    <div className='card__like'>
-                        <Button className='btn-card btn-like' onClick={handleLike} icon={<IconUp/>}>{count}</Button>
-                        <Button className='btn-card btn-dislike' onClick={handleDislike}
-                                icon={<IconDown/>}>{count2}</Button>
-                    </div>
-                    <div className='card__edit'>
-                        <Button className='btn-card btn-mark' icon={<IconMark color={isInclude ? 'red' : 'black'}/>}
-                                onClick={handleToggleFavorite}/>
+                             <div className='card__date'>
+                                 {publishedAt}
+                            </div>
+
+                             <div className='card__title'>
+                                 <h3>{title}</h3>
+                             </div>
+                             <div className='card__description'>
+                                 {summary}
+                             </div>
                         </div>
-                </div> : <></>}
-            </div>
-        </div>
-    )
+                     </div>
+
+                    <div className='card__footer'>
+                      <div className='card__newsSite'>
+                             <span>Source news: </span>
+                             {newsSite}
+                         </div>
+                     </div>
+                </div>)
+
+
+    // return (
+    //
+    // )
 }

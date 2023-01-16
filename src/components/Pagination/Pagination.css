@@ -16,6 +16,7 @@
   padding-right: 5px;
 }
 .paginations .pagination__body .pagination__allbtn {
+  padding-top: 1rem;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -62,6 +63,9 @@
 }
 .paginations--dark .pagination__btn svg {
   fill: #fff;
+}
+.paginations--dark .pagination__btn .a {
+  color: rgb(241, 241, 241);
 }
 .paginations--dark .pagination__btn:hover {
   color: #9aa6ff;
