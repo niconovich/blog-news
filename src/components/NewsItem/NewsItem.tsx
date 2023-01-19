@@ -22,11 +22,7 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
     const params = useParams();
     const NewsId:number  =Number(params.id);
     const news = data.find(news=>news.id == NewsId);
-<<<<<<< HEAD
 
-=======
-    console.log('NewsId',news)
->>>>>>> fd9bcac7c7b413cb5fdc801b8d03d37c12deb035
     const searchValue = useSelector((state: IStore) => state.articles.searchValue);
     // if (variant === 'full') {
     //     console.log('full idSelect',data[NewsId].title)
@@ -47,7 +43,6 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
         imageUrl = news.imageUrl
         newsSite=news.newsSite
     }
-<<<<<<< HEAD
     const publishedAtDate=publishedAt?publishedAt.slice(0, 10):''
         return ( <>
             {variant === 'full' ? <Breadcrumbs>
@@ -55,13 +50,6 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
             </Breadcrumbs> :<></>}
             <div className={`card--${variant} card--${theme}`}>
 
-=======
-
-        return ( <div className={`card--${variant} card--${theme}`}>
-                    {variant === 'full' ? <Breadcrumbs>
-                     <Link underline="hover" color="inherit" href="/">Home</Link>
-                         </Breadcrumbs> :<></>}
->>>>>>> fd9bcac7c7b413cb5fdc801b8d03d37c12deb035
 
                     {/*{(searchValue!==''&&news===undefined) ? <Navigate   to={'/'}/>:<></>   }*/}
                   <div className='card__main'  >
@@ -69,7 +57,6 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
                             <img src={imageUrl} alt={title}/>
                          </div>
                          <div className='card__info'>
-<<<<<<< HEAD
 
                              <div className='card__date'>
                                  {publishedAtDate}
@@ -93,31 +80,6 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
                 </div>
 
 </>)
-=======
-
-                             <div className='card__date'>
-                                 {publishedAt}
-                            </div>
-
-                             <div className='card__title'>
-                                 <h3>{title}</h3>
-                             </div>
-                             <div className='card__description'>
-                                 {summary}
-                             </div>
-                        </div>
-                     </div>
-
-                    <div className='card__footer'>
-                      <div className='card__newsSite'>
-                             <span>Source news: </span>
-                             {newsSite}
-                         </div>
-                     </div>
-                </div>)
-
-
->>>>>>> fd9bcac7c7b413cb5fdc801b8d03d37c12deb035
     // return (
     //
     // )
