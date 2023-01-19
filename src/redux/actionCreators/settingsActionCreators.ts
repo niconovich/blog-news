@@ -1,4 +1,4 @@
-import {SET_CURRENT_PAGE, SET_ACTIVE_TAB, SET_ROWS_PER_PAGE,SET_SORT_SPIS} from '../actionTypes/settingsActionTypes';
+import {SET_CURRENT_PAGE, SET_ACTIVE_TAB, SET_ROWS_PER_PAGE,SET_SORT_SPIS,SET_SORT_TITLE,SET_SORT_TYPES} from '../actionTypes/settingsActionTypes';
 
 const setActiveTab = (activeTab: string) => ({
     type: SET_ACTIVE_TAB,
@@ -20,5 +20,14 @@ const setSortSpis= (sortSpis: string) => ({
     sortSpis,
 });
 
+const setSortType= (sortType: string) => ({
+    type: SET_SORT_TYPES,
+    sortType,
+});
 
-export { setActiveTab, setCurrentPage, setRowPage,setSortSpis}
+const setSortTitle= (sortTitle: string) => ({
+    type: SET_SORT_TITLE,
+    sortTitle,
+});
+
+export { setActiveTab, setCurrentPage, setRowPage,setSortSpis,setSortType,setSortTitle}

@@ -1,12 +1,11 @@
 import {useContext, useEffect, useState} from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import { useDispatch} from 'react-redux';
-import {setRowPage, setSortSpis} from "../../redux/actionCreators/settingsActionCreators";
+import {useDispatch, useSelector} from 'react-redux';
+import {setRowPage, setSortSpis, setSortType,setSortTitle} from "../../redux/actionCreators/settingsActionCreators";
 import './DropDown.scss'
 import {ThemeContext} from "../../contexts/contexts";
 import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
 import {SelectChangeEvent} from "@mui/material/Select/Select";
+import {IStore} from "../../redux/types";
 
 
 type rowsList= {
@@ -24,19 +23,18 @@ export const  DropDownList = ((DropDownList:DropDownList) => {
     const {titleList, rowsList}=DropDownList
     const dispatch=useDispatch();
     const {theme} = useContext(ThemeContext)
-    console.log('rowsList',rowsList)
     const [rowsPerPage, setRowsPerPage] = useState(rowsList[0].value);
-
+   // const sortTitle = useSelector((state: IStore) => state.settings.sortTitle);
+   // const sortType = useSelector((state: IStore) => state.settings.sortType);
 
     useEffect (() => {
-        console.log('inputValue',rowsPerPage)
         if (titleList==='Sort') {
-            dispatch(setSortSpis(String(rowsPerPage)));
+            dispatch(setSortTitle(String(rowsPerPage)));
+        } else if (titleList==='Sort type'){
+            dispatch(setSortType(String(rowsPerPage)));
         } else {
             dispatch(setRowPage(Number(rowsPerPage)));
         }
-
-
     },[rowsPerPage])
 
     const handleChange = (event: SelectChangeEvent) => {
@@ -57,7 +55,6 @@ export const  DropDownList = ((DropDownList:DropDownList) => {
                         defaultValue={String(rowsPerPage)}
                         onChange={handleChange} >
                         { rowsList.map((row)=><MenuItem value={row.value}>{row.title}</MenuItem>)}
-
                     </Select>
                 </FormControl>
 

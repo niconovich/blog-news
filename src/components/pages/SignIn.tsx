@@ -3,15 +3,15 @@ import {Breadcrumbs, Link,Typography} from "@mui/material";
 import { Button } from '../Button/Button'
 import { FormSignIn } from '../Forms/FormSignIn/FormSignIn'
 import { PageWrapper } from '../PageWrapper/PageWrapper'
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 export const SignIn = ({ onClickHome }: any) => {
     return (
         <>
             <PageWrapper title={'Sign In'}
-                button={
-                    <Button className='btn' onClick={onClickHome}>{'Back to home'}</Button>
-                }
+                // button={
+                //     <Button className='btn' onClick={onClickHome}>{'Back to home'}</Button>
+                // }
                 breadcrumb={<Breadcrumbs>
                         <Link underline="hover" color="inherit" href='/'>Home</Link>
                         <Typography color="text.primary">Sign In</Typography>

@@ -4,7 +4,7 @@
   font-size: 1rem;
   line-height: 1.5rem;
   padding: 1rem;
-  border-radius: 2px;
+  border-radius: 4px;
   outline: none;
   border: none;
   color: #313037;
@@ -14,13 +14,13 @@
   transition: 0.3s;
 
   &:not([disabled]):hover {
-    color: rgb(28, 28, 167);
+    color: rgb(82, 82, 225);
     cursor: pointer;
   }
 }
 
 .primary {
-  background-color: rgb(28, 28, 167);
+  background-color: rgb(97, 97, 196);
   color: #fff;
 
   &:not([disabled]):hover {

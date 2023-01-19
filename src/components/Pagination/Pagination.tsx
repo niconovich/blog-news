@@ -16,13 +16,10 @@ type rowsList= {
 type countNewsPage= rowsList[]
 
 const sortAll:countNewsPage = [
-    {title:'↓ Date Create',value:'publishedAt:desc'},
-    {title:'↑ Date Create',value:'publishedAt:asc'},
-    {title:'↓ Title',value:'title:desc'},
-    {title:'↑ Title',value:'title:asc'},
-    {title:'↓ Number',value:'id:desc'},
-    {title:'↑ Number',value:'id:asc'},
-];
+    {title:'Date Create',value:'publishedAt'},
+    {title:'Title',value:'title'},
+    {title:'Number',value:'id'},
+ ];
 
 const countNewsPage:countNewsPage = [
     {title:'3 rows',value:3},
@@ -31,6 +28,11 @@ const countNewsPage:countNewsPage = [
     {title:'12 rows',value:12},
 ];
 
+const typeSort:countNewsPage = [
+    {title:'Up',value:'asc'},
+    {title:'Down',value:'desc'},
+
+];
 export const Pagination = () => {
     const {theme} = useContext(ThemeContext);
     const [isPrevDisabled, setIsPrevDisabled] = useState(false);
@@ -38,12 +40,14 @@ export const Pagination = () => {
     const countTotal = useSelector((state: IStore) => state.articles.countTotal);
     const currentPage = useSelector((state: IStore) => state.settings.currentPage);
     const rowsPerPage = useSelector((state: IStore) => state.settings.rowsPerPage);
+
     const dispatch = useDispatch()
-    const titleListRowsPager='Rows News page'
-    const titleListSort='Sort'
+    const titleListRowsPager='Rows News page';
+    const titleListSort='Sort';
+    const titleTypeSort="Sort type";
     const start=currentPage==1?1:currentPage*rowsPerPage-rowsPerPage+1
     const startEnd=countTotal<start+rowsPerPage-1?countTotal:start+rowsPerPage-1
-    console.log('countNewsPage',countNewsPage)
+
      useEffect(() => {
          setIsPrevDisabled(currentPage === 1);
          const count = Math.ceil(countTotal / rowsPerPage);
@@ -57,6 +61,7 @@ export const Pagination = () => {
                 <div className='pagination__body'>
 
                     <div className={'pagination__title'}>
+                         <DropDownList titleList={titleTypeSort} rowsList={typeSort}/>
                          <DropDownList titleList={titleListSort} rowsList={sortAll}/>
                          <DropDownList titleList={titleListRowsPager} rowsList={countNewsPage}/>
                     </div>
@@ -73,7 +78,7 @@ export const Pagination = () => {
                         </Button>
                     </div>
                         <div className={'pagination__center'}>
-                            {countTotal==0?countTotal:`${start}..${startEnd} of ${countTotal}`}
+                            {countTotal==0?countTotal:`${start}..${startEnd} current page ${currentPage} of ${countTotal}`}
                         </div>
                     <div className='pagination__right'>
                         <Button className='pagination__btn'

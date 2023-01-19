@@ -32,6 +32,8 @@ export interface ISettingsStore {
     currentPage: number,
     rowsPerPage: number,
     sortSpis:string,
+    sortType:string,
+    sortTitle:string,
 }
 
 export interface IUserStore {

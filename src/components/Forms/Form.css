@@ -2,8 +2,8 @@
   max-width: 60%;
   margin: 5rem auto;
   padding: 2rem;
-  border: 1px solid #DADADA;
-  border-radius: 2px;
+  border: 2px solid #DADADA;
+  border-radius: 6px;
 }
 .form .form__text {
   user-select: none;
@@ -35,6 +35,7 @@
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.25rem;
+  border-radius: 6px;
 }
 .form .form__submit {
   width: 100%;
@@ -51,14 +52,14 @@
   font-size: 18px;
   line-height: 24px;
   color: #fff;
-  background: #2231AA;
+  background: #1976d2;
   border: none;
-  border-radius: 2px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s;
 }
 .form .form__submit .form__btn:hover {
-  background-color: rgb(65, 65, 255);
+  background-color: #3c8be0;
 }
 .form .form__submit .submit__text {
   user-select: none;
@@ -66,12 +67,13 @@
   font-size: 16px;
   line-height: 20px;
 }
-.form .form__submit .submit__text span {
+.form .form__submit .submit__text span a {
   margin-left: 0.4rem;
-  color: #2231AA;
+  color: #1976d2;
+  text-decoration: none;
 }
-.form .form__submit .submit__text span:hover {
-  color: rgb(65, 65, 255);
+.form .form__submit .submit__text span a:hover {
+  color: #3c8be0;
   cursor: pointer;
 }
 

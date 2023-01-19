@@ -9,7 +9,7 @@
     justify-content: space-between;
 
     .header__left {
-      width: 300px;
+      width: 500px;
       height: 100%;
       display: flex;
       justify-content: space-between;
@@ -17,7 +17,7 @@
       align-items: center;
 
       .header__btn {
-        border-right: 1px solid #5360CD;
+        border-right: 1px solid #1976d2;
       }
 
       svg {
@@ -25,7 +25,19 @@
       }
     }
 
+    .header__singin{
+      width: 200px  ;
+      font-weight: 700;
+      color: #1976d2;
+      font-size: 1rem;
+        margin-left: 0.4rem;
 
+        &:hover {
+          color: #3c8be0;
+          cursor: pointer;
+        }
+
+    }
 
     .header__navbar {
       height: 100%;

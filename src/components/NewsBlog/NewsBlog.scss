@@ -1,13 +1,17 @@
 .blog__body {
+  max-width: 100%;
   display: flex;
-  align-items: flex-start;
+ // align-items: flex-start;
   flex-flow: row;
+  flex-wrap: wrap;
   padding: 1rem 0;
+  align-items: stretch;
 }
 .blog__main-content {
   max-width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   flex-flow: row wrap;
 }
 .blog__feat-content {
@@ -15,4 +19,9 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: right;
+}
+a:-webkit-any-link {
+  display: flex;
+  max-width: 33%;
+  text-decoration: none;
 }

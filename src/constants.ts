@@ -8,3 +8,7 @@ export const TABS = {
     favorites: 'My favorites',
     popular: 'Popular',
 }
+
+export const IDSelect = {
+    idSelect: 0,
+}
