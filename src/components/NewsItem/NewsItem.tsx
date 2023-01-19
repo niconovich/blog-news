@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {IArticle, IStore} from "../../redux/types";
 import {ThemeContext} from '../../contexts/contexts';
@@ -9,7 +9,7 @@ import {addFavorite, removeFavorite} from "../../redux/actionCreators/articleAct
 import {IconUp} from "../Icon/IconUp";
 import {IconDown} from "../Icon/IconDown";
 import {IconMark} from "../Icon/IconMark";
-import {NavLink,useParams} from "react-router-dom";
+import {Navigate, useParams} from "react-router-dom";
 
 
 interface ICard extends IArticle {
@@ -23,7 +23,7 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
     const NewsId:number  =Number(params.id);
     const news = data.find(news=>news.id == NewsId);
     console.log('NewsId',news)
-
+    const searchValue = useSelector((state: IStore) => state.articles.searchValue);
     // if (variant === 'full') {
     //     console.log('full idSelect',data[NewsId].title)
     //     publishedAt=data[NewsId].publishedAt
@@ -49,6 +49,7 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
                      <Link underline="hover" color="inherit" href="/">Home</Link>
                          </Breadcrumbs> :<></>}
 
+                    {/*{(searchValue!==''&&news===undefined) ? <Navigate   to={'/'}/>:<></>   }*/}
                   <div className='card__main'  >
                          <div className='card__image'>
                             <img src={imageUrl} alt={title}/>
