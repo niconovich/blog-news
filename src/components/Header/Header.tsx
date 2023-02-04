@@ -14,7 +14,7 @@ import {UserLogo} from "../UserLogo/UserLogo";
 
 
 export const Header = ({menu}: any) => {
-    ;
+
     const dispatch = useDispatch();
     const {theme} = useContext(ThemeContext);
     const navigate = useNavigate();
@@ -45,7 +45,7 @@ export const Header = ({menu}: any) => {
 
                 <div className={`header__left`}>
                     <div className={`header__search`}>
-                        <input value={searchValue} onChange={handleChange}/>
+                        <input disabled={document.location.pathname.indexOf('/news/')===0} value={searchValue} onChange={handleChange}/>
                         <IconSearch className={theme}/>
                     </div>
 
