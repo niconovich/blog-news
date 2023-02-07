@@ -28,8 +28,11 @@ function App() {
     return (
     <div className={`App App--${theme}`}>
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
-            <BrowserRouter>
+            <BrowserRouter >
+
               <Header/>
+               <div style={{display:'flex',justifyContent:'space-between',flexDirection:'column',minHeight:'90vh'}}>
+
                 <Routes>
                     <Route path='/'>
                         <Route index element={<AllNews/>} />
@@ -41,7 +44,10 @@ function App() {
                   </Routes>
 
                 <Footer className={theme}/>
+               </div>
+
             </BrowserRouter>
+
         </ThemeContext.Provider>
 
     </div>

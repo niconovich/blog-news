@@ -1,14 +1,16 @@
 .App {
-  max-width: 120rem;
+  //-width: 120rem;
   margin: 0 auto;
+  height: 100%;
   text-align: center;
   min-height: 100vh;
   background-color: #F3F3F3;
 
-.wrapper {
-  max-width: 90%;
-  margin: 0 auto;
-}
+  .wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
 
 }
 

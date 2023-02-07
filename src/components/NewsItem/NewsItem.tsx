@@ -23,6 +23,7 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
     const NewsId:number  =Number(params.id);
     const news = data.find(news=>news.id == NewsId);
 
+
     const searchValue = useSelector((state: IStore) => state.articles.searchValue);
     // if (variant === 'full') {
     //     console.log('full idSelect',data[NewsId].title)
@@ -46,7 +47,7 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
     const publishedAtDate=publishedAt?publishedAt.slice(0, 10):''
         return ( <>
             {variant === 'full' ? <Breadcrumbs>
-                <Link underline="hover" color="inherit" href="/">Home</Link>
+                <Link style={{marginLeft: '2rem'}} underline="hover" color="inherit" href="/">Home</Link>
             </Breadcrumbs> :<></>}
             <div className={`card--${variant} card--${theme}`}>
 
@@ -54,6 +55,7 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
                     {/*{(searchValue!==''&&news===undefined) ? <Navigate   to={'/'}/>:<></>   }*/}
                   <div className='card__main'  >
                          <div className='card__image'>
+
                             <img src={imageUrl} alt={title}/>
                          </div>
                          <div className='card__info'>
