@@ -23,15 +23,20 @@ export const  DropDownList = ((DropDownList:DropDownList) => {
     const {titleList, rowsList}=DropDownList
     const dispatch=useDispatch();
     const {theme} = useContext(ThemeContext)
-    const [rowsPerPage, setRowsPerPage] = useState(rowsList[0].value);
-   // const sortTitle = useSelector((state: IStore) => state.settings.sortTitle);
-   // const sortType = useSelector((state: IStore) => state.settings.sortType);
 
+    const [rowsPerPage, setRowsPerPage] = useState(rowsList[0].value);
+
+    const sortTitle = useSelector((state: IStore) => state.settings.sortTitle);
+    const sortType = useSelector((state: IStore) => state.settings.sortType);
+    const sortSpis = useSelector((state: IStore) => state.settings.sortSpis);
+    console.log(titleList,sortTitle,sortType,sortSpis);
+
+    const defaultValue=''
     useEffect (() => {
-        if (titleList==='Sort') {
-            dispatch(setSortTitle(String(rowsPerPage)));
-        } else if (titleList==='Sort type'){
+        if (titleList==='Sort type'){
             dispatch(setSortType(String(rowsPerPage)));
+        } else if (titleList==='Sort') {
+            dispatch(setSortTitle(String(rowsPerPage)));
         } else {
             dispatch(setRowPage(Number(rowsPerPage)));
         }

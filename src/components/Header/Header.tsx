@@ -45,7 +45,8 @@ export const Header = ({menu}: any) => {
 
                 <div className={`header__left`}>
                     <div className={`header__search`}>
-                        <input disabled={document.location.pathname.indexOf('/news/')===0} value={searchValue} onChange={handleChange}/>
+                        {/*<input disabled={document.location.pathname.indexOf('/news/')===0} value={searchValue} onChange={handleChange}/>*/}
+                        <input disabled={document.location.pathname!=='/'} value={searchValue} onChange={handleChange}/>
                         <IconSearch className={theme}/>
                     </div>
 

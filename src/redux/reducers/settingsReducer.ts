@@ -8,9 +8,9 @@ const initial_state = {
     activeTab: TABS.all,
     currentPage: 1,
     rowsPerPage: 3,
-    sortSpis:'',
-    sortType:'',
-    sortTitle:'',
+    sortSpis:'3',
+    sortType:'desc',
+    sortTitle:'publishedAt',
 }
 
 const settingsReducer = (state = initial_state, action: any) => {

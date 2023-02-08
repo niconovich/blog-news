@@ -2,7 +2,8 @@ import { takeEvery, put } from 'redux-saga/effects'
 
 import { IArticle } from '../types';
 
-import { LOAD_ARTICLE,
+import {
+    LOAD_ARTICLE, SET_COUNT_TOTAL_PAGES,
     SET_SEARCH_VALUE
 } from '../actionTypes/articleActionTypes';
 
@@ -19,16 +20,14 @@ function* fetchLoadPosts(action: any) {
     const { payload } = action;
     const {rowsPerPage,currentPage, searchValue, sortSpis,sortType, sortTitle } = payload;
     let sortSpisAll:string=sortTitle&&sortType?sortTitle+':'+sortType:''
-
-
-        console.log('----sortSpisAll',sortSpisAll)
     const start=currentPage==1?1:currentPage*rowsPerPage
     const response: Response = yield fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=${rowsPerPage}&_start=${start}&title_contains=${searchValue}&_sort=${sortSpisAll}`);
     const data: IArticle[] = yield response.json();
     const responseCount: Response = yield fetch(`  https://api.spaceflightnewsapi.net/v3/articles/count?title_contains=${searchValue}`);
     const count:number = yield responseCount.json();
-    // console.log('response',data,count);
-     yield put(setArticleTotal(count));
+    // const coutObj=data.length===0?1:data.length;
+    yield put(setArticleTotal(count));
+    yield put(setCountTotalPages(count/rowsPerPage));
     yield put(setArticle(data));
  }
 
@@ -62,6 +61,11 @@ const removeFavorite = (id: number) => ({
     id,
 });
 
+const setCountTotalPages= (count: number ) => ({
+    type: SET_COUNT_TOTAL_PAGES,
+    count,
+});
+
 
 function* watcherArticle() {
     yield takeEvery(LOAD_ARTICLE, fetchLoadPosts)
@@ -75,4 +79,5 @@ export {
     setArticleTotal,
     watcherArticle,
     setSearchValue,
+    setCountTotalPages,
 }

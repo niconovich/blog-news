@@ -1,4 +1,4 @@
-import { SET_COUNT_TOTAL, SET_SEARCH_VALUE } from '../actionTypes/articleActionTypes';
+import { SET_COUNT_TOTAL, SET_SEARCH_VALUE, SET_COUNT_TOTAL_PAGES} from '../actionTypes/articleActionTypes';
 import { ADD_FAVORITE, REMOVE_FAVORITE } from '../actionTypes/articleActionTypes';
 import { SET_ARTICLE} from '../actionTypes/articleActionTypes';
 import {IArticle, IArticleStore} from '../types';
@@ -7,6 +7,7 @@ const initialState = {
     articles: [],
     favorites: [],
     countTotal: 0,
+    countTotalPages:0,
     searchValue: '',
 }
 
@@ -45,6 +46,13 @@ const articleReducer = (state: IArticleStore = initialState , action: any) => {
             return ({
                 ...state,
                 searchValue: value,
+            })
+        }
+        case SET_COUNT_TOTAL_PAGES: {
+            const { count } = action;
+            return ({
+                ...state,
+                countTotalPages: count,
             })
         }
         default: return state;

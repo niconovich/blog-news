@@ -24,6 +24,7 @@ export interface IArticleStore {
     articles: IArticle[],
     favorites: number[],
     countTotal: number,
+    countTotalPages: number,
     searchValue: string,
 }
 
