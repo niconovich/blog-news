@@ -26,17 +26,16 @@ export const FormSignUp = () => {
     }
 
     return (
-        <form className='form' onSubmit={onSubmit}>
+        <form className='form-sign-in' onSubmit={onSubmit}>
             <Input className='form__input' label='Name' placeholder='Your name' type='text'/>
             <Input className='form__input' label='E-mail' placeholder='Your e-mail' type='email'/>
             <Input className='form__input' label='Password' type='password' placeholder='Your password'/>
             <Input className='form__input' label='Confirm password' type='password' placeholder='Confirm password'/>
             <div className='form__submit'>
                 <Button className='form__btn' type='submit' children='Sign Up'/>
-                <p className='submit__text'>Already have an account?
-                    <NavLink style={{textDecoration: 'none'}} to='/sign_in'>
-                        <span>Sign In</span>
-                    </NavLink>
+                <p className='submit__text'>
+                    <span>Already have an account?</span>
+                    <NavLink  to='/sign_in'>   Sign In    </NavLink>
                 </p>
             </div>
         </form>

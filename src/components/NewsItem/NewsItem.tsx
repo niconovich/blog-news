@@ -9,7 +9,7 @@ import {addFavorite, removeFavorite} from "../../redux/actionCreators/articleAct
 import {IconUp} from "../Icon/IconUp";
 import {IconDown} from "../Icon/IconDown";
 import {IconMark} from "../Icon/IconMark";
-import {Navigate, useParams} from "react-router-dom";
+import {Navigate, NavLink, useParams} from "react-router-dom";
 
 
 interface ICard extends IArticle {
@@ -47,7 +47,8 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
     const publishedAtDate=publishedAt?publishedAt.slice(0, 10):''
         return ( <>
             {variant === 'full' ? <Breadcrumbs>
-                <Link style={{marginLeft: '2rem'}} underline="hover" color="inherit" href="\">Home</Link>
+                <NavLink style={{marginLeft: '2rem'}} to="/">Home</NavLink>
+                {/*<Link style={{marginLeft: '2rem'}} underline="hover" color="inherit" href="\">Home</Link>*/}
             </Breadcrumbs> :<></>}
             <div className={`card--${variant} card--${theme}`}>
 

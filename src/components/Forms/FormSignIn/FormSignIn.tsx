@@ -52,17 +52,14 @@ export const FormSignIn = () => {
                    onChange={handlePassword}
                    value={password}
             />
-            {/*<NavLink style={{textDecoration: 'none'}} to='/reset_pass'>*/}
-            {/*    <p className='form__text'>Forgot password?</p>*/}
-            {/*</NavLink>*/}
+
             <div className='form__submit'>
                 <Button className='form__btn'
                         type='submit'
                         children='Sign In'/>
-                <p className='submit__text'>Don`t have an account?
-                    <NavLink style={{textDecoration: 'none'}} to='/sign_up'>
-                        <span>Sign Up</span>
-                    </NavLink>
+                <p className='submit__text'>
+                    <span>Don`t have an account?</span>
+                    <NavLink  to='/sign_up'>  Sign Up  </NavLink>
                 </p>
             </div>
         </form>

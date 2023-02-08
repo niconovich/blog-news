@@ -4,6 +4,7 @@ import { Button } from '../Button/Button'
 import { FormSuccess } from '../Forms/FormSuccess/FormSuccess'
 import { PageWrapper } from '../PageWrapper/PageWrapper'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {NavLink} from "react-router-dom";
 
 export const Success = ({ onClickHome }:any) => {
     return (
@@ -13,7 +14,8 @@ export const Success = ({ onClickHome }:any) => {
                     <Button className='btn' onClick={onClickHome}>{'Back to home'}</Button>
                 }
                 breadcrumb={<Breadcrumbs>
-                    <Link underline="hover" color="inherit" href='/'>Home</Link>
+                    <NavLink   to="/">Home</NavLink>
+                    {/*<Link underline="hover" color="inherit" href='/'>Home</Link>*/}
                     <Typography color="text.primary">Success</Typography>
                 </Breadcrumbs>}>
                 <FormSuccess/>
