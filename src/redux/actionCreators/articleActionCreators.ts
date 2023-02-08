@@ -25,9 +25,9 @@ function* fetchLoadPosts(action: any) {
     const data: IArticle[] = yield response.json();
     const responseCount: Response = yield fetch(`  https://api.spaceflightnewsapi.net/v3/articles/count?title_contains=${searchValue}`);
     const count:number = yield responseCount.json();
-    // const coutObj=data.length===0?1:data.length;
+
     yield put(setArticleTotal(count));
-    yield put(setCountTotalPages(count/rowsPerPage));
+    yield put(setCountTotalPages(Math.ceil(count/rowsPerPage)));
     yield put(setArticle(data));
  }
 

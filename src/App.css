@@ -1,13 +1,31 @@
 .App {
-  max-width: 120rem;
   margin: 0 auto;
-  text-align: center;
   height: 100%;
+  text-align: center;
+  min-height: 100vh;
   background-color: #F3F3F3;
+}
+.App .content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 90vh;
 }
 .App .wrapper {
   max-width: 90%;
   margin: 0 auto;
+}
+.App a {
+  color: #1976d2;
+}
+.App a:hover {
+  color: #3c8be0;
+}
+.App .css-1wuw8dw-MuiBreadcrumbs-separator {
+  color: #1976d2;
+}
+.App .css-1gqyz35-MuiTypography-root {
+  color: #1976d2;
 }
 
 .App--dark {

@@ -12,6 +12,9 @@
   height: 30px;
   width: 30px;
 }
+.logo a {
+  align-items: center;
+}
 
 .logo--dark span {
   color: rgb(168, 167, 167);

@@ -25,9 +25,9 @@ export const Header = ({menu}: any) => {
     const sortSpis = useSelector((state: IStore) => state.settings.sortSpis);
     const sortType = useSelector((state: IStore) => state.settings.sortType);
     const sortTitle = useSelector((state: IStore) => state.settings.sortTitle);
-
-
     const currentPage = useSelector((state: IStore) => state.settings.currentPage);
+
+
     // console.log('Header rowsPerPage=',rowsPerPage)
     useEffect(() => {
         dispatch(loadArticle({rowsPerPage, currentPage, searchValue,sortSpis,sortType,sortTitle}));

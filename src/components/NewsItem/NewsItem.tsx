@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState,useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {IArticle, IStore} from "../../redux/types";
 import {ThemeContext} from '../../contexts/contexts';
@@ -10,11 +10,13 @@ import {IconUp} from "../Icon/IconUp";
 import {IconDown} from "../Icon/IconDown";
 import {IconMark} from "../Icon/IconMark";
 import {Navigate, NavLink, useParams} from "react-router-dom";
-
+import preloader from '../../assets/Double Ring-5.9s-204px.svg'
+import {useImageLoader} from "../ImagePreload/useImageLoader";
 
 interface ICard extends IArticle {
     variant: 'bg' | 'md' | 'sm' | 'full'
 }
+
 
 export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, newsSite}: ICard) => {
     const data = useSelector((state: IStore) => state.articles.articles);
@@ -22,17 +24,9 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
     const params = useParams();
     const NewsId:number  =Number(params.id);
     const news = data.find(news=>news.id == NewsId);
-
-
+    const urlImg=useImageLoader(preloader,imageUrl?imageUrl:'')
     const searchValue = useSelector((state: IStore) => state.articles.searchValue);
-    // if (variant === 'full') {
-    //     console.log('full idSelect',data[NewsId].title)
-    //     publishedAt=data[NewsId].publishedAt
-    //     title=data[NewsId].title
-    //     summary=data[NewsId].summary
-    //     imageUrl=data[NewsId].imageUrl
-    //     newsSite=data[NewsId].newsSite
-    // }
+
 
     const {theme} = useContext(ThemeContext);
 
@@ -48,16 +42,11 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
         return ( <>
             {variant === 'full' ? <Breadcrumbs>
                 <NavLink style={{marginLeft: '2rem'}} to="/">Home</NavLink>
-                {/*<Link style={{marginLeft: '2rem'}} underline="hover" color="inherit" href="\">Home</Link>*/}
             </Breadcrumbs> :<></>}
             <div className={`card--${variant} card--${theme}`}>
-
-
-                    {/*{(searchValue!==''&&news===undefined) ? <Navigate   to={'/'}/>:<></>   }*/}
                   <div className='card__main'  >
                          <div className='card__image'>
-
-                            <img src={imageUrl} alt={title}/>
+                             {variant === 'full' ? <img src={imageUrl} alt={title} />: <img src={urlImg} alt={title} />}
                          </div>
                          <div className='card__info'>
 

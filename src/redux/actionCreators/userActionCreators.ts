@@ -77,7 +77,7 @@ function* fetchSignUp(action: any) {
           body: JSON.stringify(userInfo),
         })
         const response: IUser = yield data.json();
-        console.log(response);
+        // console.log(response);
 }
 
 function* fetchUserInfo(){

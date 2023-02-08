@@ -58,18 +58,13 @@
   background-color: #3c8be0;
 }
 .form-sign-in .form__submit .submit__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   user-select: none;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-}
-.form-sign-in .form__submit .submit__text span {
-  margin-left: 0.4rem;
-  color: #1976d2;
-}
-.form-sign-in .form__submit .submit__text span:hover {
-  color: #1976d2;
-  cursor: pointer;
 }
 
 /*# sourceMappingURL=FormSignUp.css.map */

@@ -2,53 +2,46 @@
   position: absolute;
   top: 5rem;
   width: 14rem;
-  height: 30rem;
-  height: 90vh;
+  height: 2rem;
   display: flex;
   flex-flow: column;
+  padding: 5px;
   justify-content: space-between;
   background-color: #F3F3F3;
   border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #2c3034;
 }
-.burger-menu .burger-menu__row > div {
-  padding: 0 0;
-}
-.burger-menu .burger-menu__row .burger-menu__user {
+.burger-menu button {
   width: 100%;
-  padding: 2rem 0;
-  background-color: #2231AA;
+  height: 2rem;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
   color: #fff;
-}
-.burger-menu .burger-menu__row .burger-menu__user span {
-  margin-right: 1rem;
-  padding: 1rem;
-  background-color: #2737cf;
-}
-.burger-menu .burger-menu__row .burger-menu__link {
+  background: #1976d2;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  border-bottom: 1px solid grey;
-  padding: 0.5rem 0;
+  transition: background 0.3s;
 }
-.burger-menu .burger-menu__row .burger-menu__link:last-child {
-  border-bottom: none;
-}
-.burger-menu .burger-menu__row .burger-menu__theme {
+.burger-menu .burger-menu__theme {
   display: flex;
 }
-.burger-menu .burger-menu__row .burger-menu__theme > div {
+.burger-menu .burger-menu__theme > div {
   width: 50%;
   padding: 0.5rem 0;
   cursor: pointer;
   border: 1px solid grey;
   border-left: none;
 }
-.burger-menu .burger-menu__row .burger-menu__theme > div svg {
+.burger-menu .burger-menu__theme > div svg {
   fill: rgb(39, 39, 39);
 }
-.burger-menu .burger-menu__row .burger-menu__theme > div:hover > svg {
+.burger-menu .burger-menu__theme > div:hover > svg {
   fill: rgba(39, 39, 39, 0.685);
 }
-.burger-menu .burger-menu__row .burger-menu__theme > div:last-child {
+.burger-menu .burger-menu__theme > div:last-child {
   border-right: none;
 }
 

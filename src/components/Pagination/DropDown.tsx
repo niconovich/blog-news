@@ -29,7 +29,7 @@ export const  DropDownList = ((DropDownList:DropDownList) => {
     const sortTitle = useSelector((state: IStore) => state.settings.sortTitle);
     const sortType = useSelector((state: IStore) => state.settings.sortType);
     const sortSpis = useSelector((state: IStore) => state.settings.sortSpis);
-    console.log(titleList,sortTitle,sortType,sortSpis);
+    // console.log(titleList,sortTitle,sortType,sortSpis);
 
     const defaultValue=''
     useEffect (() => {

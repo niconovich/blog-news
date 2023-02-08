@@ -53,8 +53,7 @@ export const Pagination = () => {
     useEffect(() => {
         setIsPrevDisabled(currentPage === 1);
         // const count = Math.ceil(countTotal / rowsPerPage);
-        // dispatch(setCountTotalPages(count));
-        setIsNextDisabled(countTotalValue === currentPage);
+        setIsNextDisabled(countTotalValue-1 === currentPage);
         dispatch(setCurrentPage(currentPage))
     }, [currentPage, rowsPerPage, countTotal])
     const handleChangePage = (e: any) => {

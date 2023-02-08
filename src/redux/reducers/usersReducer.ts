@@ -8,8 +8,7 @@ const userReducer = (state = initial_state, action: any) => {
     switch(action.type) {
         case SET_USER: {
             const { user } = action;
-            console.log(user)
-            return ({
+             return ({
                 ...state,
                 user,
             })
