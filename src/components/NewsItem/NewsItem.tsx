@@ -47,7 +47,7 @@ export const NewsItem = ({variant, publishedAt, title, summary, imageUrl, id, ne
     const publishedAtDate=publishedAt?publishedAt.slice(0, 10):''
         return ( <>
             {variant === 'full' ? <Breadcrumbs>
-                <Link style={{marginLeft: '2rem'}} underline="hover" color="inherit" href="/">Home</Link>
+                <Link style={{marginLeft: '2rem'}} underline="hover" color="inherit" href="\">Home</Link>
             </Breadcrumbs> :<></>}
             <div className={`card--${variant} card--${theme}`}>
 

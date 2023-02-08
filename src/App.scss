@@ -5,7 +5,12 @@
   text-align: center;
   min-height: 100vh;
   background-color: #F3F3F3;
-
+.content{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 90vh;
+}
   .wrapper {
     max-width: 90%;
     margin: 0 auto;
