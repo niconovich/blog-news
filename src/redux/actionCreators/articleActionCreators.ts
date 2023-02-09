@@ -15,6 +15,7 @@ import {
 
 import { SET_ARTICLE } from '../actionTypes/articleActionTypes';
 import { getToken } from './userActionCreators';
+import {setCurrentPage} from "./settingsActionCreators";
 
 function* fetchLoadPosts(action: any) {
     const { payload } = action;
@@ -25,9 +26,11 @@ function* fetchLoadPosts(action: any) {
     const data: IArticle[] = yield response.json();
     const responseCount: Response = yield fetch(`  https://api.spaceflightnewsapi.net/v3/articles/count?title_contains=${searchValue}`);
     const count:number = yield responseCount.json();
-
+    const newCountTotalPages=count>0?Math.ceil(count/rowsPerPage):1
+    const newCurrentPage=currentPage>newCountTotalPages?newCountTotalPages-1:currentPage;
+    yield put(setCurrentPage(newCurrentPage===0?0:newCurrentPage));
     yield put(setArticleTotal(count));
-    yield put(setCountTotalPages(Math.ceil(count/rowsPerPage)));
+    yield put(setCountTotalPages(newCountTotalPages));
     yield put(setArticle(data));
  }
 

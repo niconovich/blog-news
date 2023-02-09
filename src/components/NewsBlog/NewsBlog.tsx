@@ -15,11 +15,8 @@ export const NewsBlog = () => {
         <>
             <Pagination/>
             <div className={`blog__body blog__body--${theme}`}>
-                {/*<div className='blog__main-content'>*/}
                     {data.map( (card, i) =><NavLink to={`/news/${card.id}`}> <NewsItem key={card.id} id={card.id} variant='bg' publishedAt={card.publishedAt} title={card.title} summary={card.summary} imageUrl={card.imageUrl} newsSite={card.newsSite}/></NavLink>)}
-                {/*</div>*/}
-
-            </div>
+             </div>
         </>
     )
 }
